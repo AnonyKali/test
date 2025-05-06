@@ -28,13 +28,10 @@ async function applyFilters(page = 1) {
   };
 
   const filename = `${typeMap[type]}_${dateMap[date]}_${sortMap[sort]}.json`;
-  
-  // SECURITY FIX: Dynamic path resolution
-  const basePath = window.location.hostname === 'localhost' ? '' : `/${window.location.pathname.split('/')[1] || ''}`;
-  const filePath = `${basePath}/Lists/${filename}?v=${Date.now()}`;
+  const cacheBuster = `?v=${Date.now()}`;
 
   try {
-    const response = await fetch(filePath);
+    const response = await fetch(`/Lists/${filename}${cacheBuster}`);
     if (!response.ok) throw new Error('Data not found');
 
     const { domains } = await response.json();
@@ -45,7 +42,6 @@ async function applyFilters(page = 1) {
     const startIndex = (page - 1) * limit;
     const paginated = domains.slice(startIndex, startIndex + limit);
 
-    // ORIGINAL STYLING PRESERVED:
     paginated.forEach((d, i) => {
       const row = `<tr class="border-b border-gray-600">
         <td>${startIndex + i + 1}</td>
@@ -73,7 +69,6 @@ async function applyFilters(page = 1) {
   }
 }
 
-// ORIGINAL PAGINATION STYLING
 function renderPagination(total, limit, current) {
   const pages = Math.ceil(total / limit);
   let html = '';
