@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Talxa - Best Tool for Domain Investors</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <header class="text-center py-6 bg-gray-800">
+    <h1 class="text-3xl font-bold">🌐 Talxa</h1>
+    <p class="mt-2 text-sm text-gray-300">Subscribe to our mail list to receive daily expired .com premium domains evaluations</p>
+    <h2 class="text-xl mt-4 font-semibold">TOP 100 Recent Expired Domains</h2>
+  </header>
+
+  <section class="p-4 max-w-6xl mx-auto">
+    <div class="flex flex-wrap gap-4 justify-center text-black">
+      <select id="type" class="p-2 rounded">
+        <option value="5L.coms & 6L.coms">5L.com & 6L.com</option>
+        <option value="5L.coms">5L.coms</option>
+        <option value="6L.coms">6L.coms</option>
+      </select>
+
+      <select id="sort" class="p-2 rounded">
+        <option value="marketplace">Marketplace Estimation</option>
+        <option value="auction">Auctions Estimation</option>
+        <option value="brokerage">Brokerage Estimation</option>
+        <option value="average">Average Estimation</option>
+      </select>
+
+      <select id="date" class="p-2 rounded">
+        <option value="today">Today</option>
+        <option value="yesterday">Yesterday</option>
+        <option value="last7days">Last 7 Days</option>
+        <option value="last30days">Last 30 Days</option>
+      </select>
+
+      <select id="limit" class="p-2 rounded">
+        <option>25</option>
+        <option>50</option>
+        <option>75</option>
+        <option>100</option>
+        <option>150</option>
+        <option>200</option>
+      </select>
+      <button onclick="applyFilters(1)" class="bg-blue-600 text-white px-4 py-2 rounded">Apply</button>
+    </div>
+
+    <div class="mt-6 overflow-x-auto">
+      <table class="w-full table-auto border-collapse text-sm text-center">
+        <thead class="bg-gray-700">
+          <tr>
+            <th>#</th>
+            <th>Domain Name</th>
+            <th>Type</th>
+            <th>Auction</th>
+            <th>Marketplace</th>
+            <th>Brokerage</th>
+            <th>Average</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="domain-table" class="bg-gray-800">
+          <!-- Content will be injected -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mt-4" id="pagination">
+      <!-- Pagination will be injected -->
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
