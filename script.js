@@ -6,6 +6,10 @@ async function applyFilters(page = 1) {
   const date = document.getElementById('date').value;
   const limit = parseInt(document.getElementById('limit').value);
 
+  // Show loading state
+  const table = document.getElementById('domain-table');
+  table.innerHTML = '<tr><td colspan="8" class="p-4 text-center">Loading domains...</td></tr>';
+
   // Map UI selections to JSON filenames
   const typeMap = {
     "5L.coms & 6L.coms": "all",
@@ -27,68 +31,72 @@ async function applyFilters(page = 1) {
     "average": "average_value"
   };
 
-  // Construct the correct path to JSON files
-  const basePath = window.location.hostname === 'localhost' ? '' : '/Talxa.com';
+  // Construct the correct path
   const filename = `${typeMap[type]}_${dateMap[date]}_${sortMap[sort]}.json`;
-  const filePath = `${basePath}/Lists/${filename}?v=${Date.now()}`;
+  const filePath = `Lists/${filename}?v=${Date.now()}`; // Relative path from root
 
   try {
     const response = await fetch(filePath);
+    
     if (!response.ok) {
       // Try alternative path if first attempt fails
-      const altResponse = await fetch(`/Lists/${filename}?v=${Date.now()}`);
-      if (!altResponse.ok) throw new Error('Data not found');
+      const altPath = `/${filePath}`; // Absolute path
+      const altResponse = await fetch(altPath);
+      if (!altResponse.ok) throw new Error(`File ${filename} not found`);
       return processData(await altResponse.json(), page, limit);
     }
+    
     processData(await response.json(), page, limit);
   } catch (error) {
-    showError(error);
+    showError(error, filename);
   }
 }
 
 function processData(data, page, limit) {
   const table = document.getElementById('domain-table');
-  table.innerHTML = '';
-
-  const { domains } = data;
-  const startIndex = (page - 1) * limit;
-  const paginated = domains.slice(startIndex, startIndex + limit);
-
-  if (domains.length === 0) {
+  
+  if (!data.domains || data.domains.length === 0) {
     table.innerHTML = `
       <tr>
         <td colspan="8" class="text-yellow-400 p-4">
-          No domains found matching your criteria
+          No domains found for the selected filters
         </td>
       </tr>`;
     document.getElementById('pagination').innerHTML = '';
     return;
   }
 
+  table.innerHTML = '';
+  const startIndex = (page - 1) * limit;
+  const paginated = data.domains.slice(startIndex, startIndex + limit);
+
   paginated.forEach((d, i) => {
-    const row = `<tr class="border-b border-gray-600">
-      <td>${startIndex + i + 1}</td>
-      <td class="font-mono">${d.domain}</td>
-      <td>${d.domain_type}</td>
-      <td>$${d.auction.toLocaleString()}</td>
-      <td>$${d.marketplace.toLocaleString()}</td>
-      <td>$${d.brokerage.toLocaleString()}</td>
-      <td>$${d.average_value.toLocaleString()}</td>
-      <td>${new Date(d.date).toLocaleDateString()}</td>
+    const row = `<tr class="border-b border-gray-600 hover:bg-gray-700">
+      <td class="py-2">${startIndex + i + 1}</td>
+      <td class="font-mono py-2">${d.domain}</td>
+      <td class="py-2">${d.domain_type}</td>
+      <td class="py-2">$${d.auction?.toLocaleString() || '0'}</td>
+      <td class="py-2">$${d.marketplace?.toLocaleString() || '0'}</td>
+      <td class="py-2">$${d.brokerage?.toLocaleString() || '0'}</td>
+      <td class="py-2">$${d.average_value?.toLocaleString() || '0'}</td>
+      <td class="py-2">${d.date || 'N/A'}</td>
     </tr>`;
     table.insertAdjacentHTML('beforeend', row);
   });
 
-  renderPagination(domains.length, limit, page);
+  renderPagination(data.domains.length, limit, page);
 }
 
-function showError(error) {
+function showError(error, filename) {
   console.error('Error:', error);
   document.getElementById('domain-table').innerHTML = `
     <tr>
       <td colspan="8" class="text-red-400 p-4">
-        Error loading data: ${error.message}<br>
-        <small>Please check your filters and try again</small>
+        Error loading ${filename}: ${error.message}<br>
+        <button onclick="applyFilters(${currentPage})" 
+                class="mt-2 px-4 py-1 bg-blue-600 rounded">
+          Retry
+        </button>
       </td>
     </tr>`;
   document.getElementById('pagination').innerHTML = '';
@@ -101,29 +109,30 @@ function renderPagination(total, limit, current) {
   if (current > 1) {
     html += `<button onclick="applyFilters(${current - 1})" 
              class="mx-1 px-3 py-1 bg-gray-700 rounded hover:bg-gray-600">
-             Prev</button>`;
+             &laquo; Prev</button>`;
   }
   
-  // Show first page, current range, and last page
-  const maxVisible = 5;
-  let startPage = Math.max(1, current - Math.floor(maxVisible/2));
-  let endPage = Math.min(pages, startPage + maxVisible - 1);
-  
-  if (startPage > 1) {
+  // Always show first page
+  if (current > 3) {
     html += `<button onclick="applyFilters(1)" 
              class="mx-1 px-3 py-1 ${1 === current ? 'bg-blue-600' : 'bg-gray-700'} rounded">
              1</button>`;
-    if (startPage > 2) html += `<span class="mx-1">...</span>`;
+    if (current > 4) html += `<span class="mx-1">...</span>`;
   }
   
-  for (let i = startPage; i <= endPage; i++) {
+  // Show pages around current
+  const start = Math.max(1, current - 2);
+  const end = Math.min(pages, current + 2);
+  
+  for (let i = start; i <= end; i++) {
     html += `<button onclick="applyFilters(${i})" 
              class="mx-1 px-3 py-1 ${i === current ? 'bg-blue-600' : 'bg-gray-700'} rounded">
              ${i}</button>`;
   }
   
-  if (endPage < pages) {
-    if (endPage < pages - 1) html += `<span class="mx-1">...</span>`;
+  // Always show last page
+  if (current < pages - 2) {
+    if (current < pages - 3) html += `<span class="mx-1">...</span>`;
     html += `<button onclick="applyFilters(${pages})" 
              class="mx-1 px-3 py-1 ${pages === current ? 'bg-blue-600' : 'bg-gray-700'} rounded">
              ${pages}</button>`;
@@ -132,7 +141,7 @@ function renderPagination(total, limit, current) {
   if (current < pages) {
     html += `<button onclick="applyFilters(${current + 1})" 
              class="mx-1 px-3 py-1 bg-gray-700 rounded hover:bg-gray-600">
-             Next</button>`;
+             Next &raquo;</button>`;
   }
 
   document.getElementById('pagination').innerHTML = html;
