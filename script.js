@@ -31,27 +31,34 @@ async function applyFilters(page = 1) {
     "average": "average_value"
   };
 
-  // Dynamic path resolution
+  // Secure URL construction
   const filename = `${typeMap[type]}_${dateMap[date]}_${sortMap[sort]}.json`;
-  const repoName = window.location.pathname.split('/')[1] || ''; // Gets "test" from /test/
-  const basePath = repoName ? `/${repoName}` : '';
-  const filePath = `${basePath}/Lists/${filename}?v=${Date.now()}`;
+  const isLocalhost = window.location.hostname === 'localhost';
+  const baseUrl = isLocalhost ? '' : `https://${window.location.hostname}`;
+  const filePath = `${baseUrl}/Lists/${filename}?v=${Date.now()}`;
 
   try {
-    const response = await fetch(filePath);
+    const response = await fetch(filePath, {
+      mode: 'cors',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    });
     
     if (!response.ok) {
-      // Try without repo name if in root
-      const altResponse = await fetch(`/Lists/${filename}?v=${Date.now()}`);
-      if (!altResponse.ok) throw new Error(`Data file not found: ${filename}`);
-      return processData(await altResponse.json(), page, limit);
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
-    processData(await response.json(), page, limit);
+
+    const data = await response.json();
+    processData(data, page, limit);
   } catch (error) {
     showError(error, filename);
   }
 }
+
+// ... [rest of your existing script.js functions remain exactly the same]
 
 function processData(data, page, limit) {
   const table = document.getElementById('domain-table');
