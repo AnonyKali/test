@@ -43,18 +43,18 @@ async function applyFilters(page = 1) {
     const paginated = domains.slice(startIndex, startIndex + limit);
 
     paginated.forEach((d, i) => {
-      const row = `<tr class="border-b border-gray-600">
-        <td>${startIndex + i + 1}</td>
-        <td>${d.domain}</td>
-        <td>${d.domain_type}</td>
-        <td>$${d.auction}</td>
-        <td>$${d.marketplace}</td>
-        <td>$${d.brokerage}</td>
-        <td>$${d.average_value}</td>
-        <td>${d.date}</td>
-      </tr>`;
-      table.insertAdjacentHTML('beforeend', row);
-    });
+  const row = `<tr class="border-b border-gray-600">
+    <td class="px-2 py-1">${startIndex + i + 1}</td>
+    <td class="px-4 py-1">${d.domain}</td>
+    <td class="px-3 py-1 border-l border-r border-gray-600">${d.domain_type}</td>
+    <td class="px-3 py-1 border-r border-gray-600">$${d.auction}</td>
+    <td class="px-3 py-1 border-r border-gray-600">$${d.marketplace}</td>
+    <td class="px-3 py-1 border-r border-gray-600">$${d.brokerage}</td>
+    <td class="px-3 py-1 border-r border-gray-600">$${d.average_value}</td>
+    <td class="px-3 py-1">${d.date}</td>
+  </tr>`;
+  table.insertAdjacentHTML('beforeend', row);
+});
 
     renderPagination(domains.length, limit, page);
 
