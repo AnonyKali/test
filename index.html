@@ -16,27 +16,27 @@
 
   <section class="p-4 max-w-6xl mx-auto">
     <div class="flex flex-wrap gap-4 justify-center text-black">
-      <select id="type" class="p-2 rounded">
+      <select id="type" class="p-2 rounded text-sm md:text-base">
         <option value="5L.coms & 6L.coms">5L.com & 6L.com</option>
         <option value="5L.coms">5L.coms</option>
         <option value="6L.coms">6L.coms</option>
       </select>
 
-      <select id="sort" class="p-2 rounded">
+      <select id="sort" class="p-2 rounded text-sm md:text-base">
         <option value="marketplace">Marketplace Estimation</option>
         <option value="auction">Auctions Estimation</option>
         <option value="brokerage">Brokerage Estimation</option>
         <option value="average">Average Estimation</option>
       </select>
 
-      <select id="date" class="p-2 rounded">
+      <select id="date" class="p-2 rounded text-sm md:text-base">
         <option value="today">Today</option>
         <option value="yesterday">Yesterday</option>
         <option value="last7days">Last 7 Days</option>
         <option value="last30days">Last 30 Days</option>
       </select>
 
-      <select id="limit" class="p-2 rounded">
+      <select id="limit" class="p-2 rounded text-sm md:text-base">
         <option>25</option>
         <option>50</option>
         <option>75</option>
@@ -44,30 +44,30 @@
         <option>150</option>
         <option>200</option>
       </select>
-      <button onclick="applyFilters(1)" class="bg-blue-600 text-white px-4 py-2 rounded">Apply</button>
+      <button onclick="applyFilters(1)" class="bg-blue-600 text-white px-4 py-2 rounded text-sm md:text-base">Apply</button>
     </div>
 
     <div class="mt-6 overflow-x-auto">
-      <table class="w-full table-auto border-collapse text-sm text-center">
-  <thead class="bg-gray-700">
-    <tr>
-      <th class="px-2">#</th>
-      <th class="px-4">Domain Name</th>
-      <th class="px-3">Type</th>
-      <th class="px-3">Auction</th>
-      <th class="px-3">Marketplace</th>
-      <th class="px-3">Brokerage</th>
-      <th class="px-3">Average</th>
-      <th class="px-3">Date</th>
-    </tr>
-  </thead>
-  <tbody id="domain-table" class="bg-gray-800 divide-y divide-gray-600">
-    <!-- Content will be injected -->
-  </tbody>
-</table>
+      <table class="w-full border-separate border-spacing-0 border border-gray-600 text-sm md:text-base">
+        <thead class="bg-gray-700">
+          <tr>
+            <th class="p-2 border border-gray-600">#</th>
+            <th class="p-2 border border-gray-600">Domain Name</th>
+            <th class="p-2 border border-gray-600">Type</th>
+            <th class="p-2 border border-gray-600">Auction</th>
+            <th class="p-2 border border-gray-600">Marketplace</th>
+            <th class="p-2 border border-gray-600">Brokerage</th>
+            <th class="p-2 border border-gray-600">Average</th>
+            <th class="p-2 border border-gray-600">Date</th>
+          </tr>
+        </thead>
+        <tbody id="domain-table" class="bg-gray-800">
+          <!-- Content will be injected -->
+        </tbody>
+      </table>
     </div>
 
-    <div class="text-center mt-4" id="pagination">
+    <div class="text-center mt-4 overflow-x-auto" id="pagination">
       <!-- Pagination will be injected -->
     </div>
   </section>
