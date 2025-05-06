@@ -31,18 +31,19 @@ async function applyFilters(page = 1) {
     "average": "average_value"
   };
 
-  // Construct the correct path
+  // Dynamic path resolution
   const filename = `${typeMap[type]}_${dateMap[date]}_${sortMap[sort]}.json`;
-  const filePath = `Lists/${filename}?v=${Date.now()}`; // Relative path from root
+  const repoName = window.location.pathname.split('/')[1] || ''; // Gets "test" from /test/
+  const basePath = repoName ? `/${repoName}` : '';
+  const filePath = `${basePath}/Lists/${filename}?v=${Date.now()}`;
 
   try {
     const response = await fetch(filePath);
     
     if (!response.ok) {
-      // Try alternative path if first attempt fails
-      const altPath = `/${filePath}`; // Absolute path
-      const altResponse = await fetch(altPath);
-      if (!altResponse.ok) throw new Error(`File ${filename} not found`);
+      // Try without repo name if in root
+      const altResponse = await fetch(`/Lists/${filename}?v=${Date.now()}`);
+      if (!altResponse.ok) throw new Error(`Data file not found: ${filename}`);
       return processData(await altResponse.json(), page, limit);
     }
     
