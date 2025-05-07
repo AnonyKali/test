@@ -1,20 +1,20 @@
 let currentPage = 1;
 const DEFAULT_LIMIT = 25;
 
-// Default filter configuration
-const DEFAULT_FILTERS = {
-  type: "5L.coms & 6L.coms",
-  sort: "marketplace", 
-  date: "last7days",
-  limit: DEFAULT_LIMIT
-};
+// Set default values on page load
+function setDefaultFilters() {
+  document.getElementById('type').value = "5L.coms & 6L.coms";
+  document.getElementById('sort').value = "marketplace";
+  document.getElementById('date').value = "last7days";
+  document.getElementById('limit').value = DEFAULT_LIMIT;
+}
 
-async function applyFilters(page = 1, filters = {}) {
-  // Merge with default filters
-  const activeFilters = { ...DEFAULT_FILTERS, ...filters };
+async function applyFilters(page = 1) {
   currentPage = page;
-  
-  const { type, sort, date, limit } = activeFilters;
+  const type = document.getElementById('type').value;
+  const sort = document.getElementById('sort').value;
+  const date = document.getElementById('date').value;
+  const limit = parseInt(document.getElementById('limit').value);
 
   // Map UI selections to JSON filenames
   const typeMap = {
@@ -25,7 +25,7 @@ async function applyFilters(page = 1, filters = {}) {
 
   const dateMap = {
     "today": "today",
-    "yesterday": "yesterday", 
+    "yesterday": "yesterday",
     "last7days": "last7days",
     "last30days": "last30days"
   };
@@ -45,14 +45,29 @@ async function applyFilters(page = 1, filters = {}) {
     if (!response.ok) throw new Error('Data not found');
 
     const { domains } = await response.json();
-    renderTable(domains, page, limit);
-    renderPagination(domains.length, limit, page);
 
-    // Update UI controls
-    document.getElementById('type').value = type;
-    document.getElementById('sort').value = sort;
-    document.getElementById('date').value = date;
-    document.getElementById('limit').value = limit;
+    const table = document.getElementById('domain-table');
+    table.innerHTML = '';
+
+    const startIndex = (page - 1) * limit;
+    const paginated = domains.slice(startIndex, startIndex + limit);
+
+    paginated.forEach((d, i) => {
+      const formattedDate = d.date ? d.date.replace(/\n/g, ' ') : 'N/A';
+      const row = `<tr>
+        <td class="p-2 border border-gray-600 text-center">${startIndex + i + 1}</td>
+        <td class="p-2 border border-gray-600 whitespace-nowrap">${d.domain}</td>
+        <td class="p-2 border border-gray-600 text-center">${d.domain_type}</td>
+        <td class="p-2 border border-gray-600 text-center">$${d.auction}</td>
+        <td class="p-2 border border-gray-600 text-center">$${d.marketplace}</td>
+        <td class="p-2 border border-gray-600 text-center">$${d.brokerage}</td>
+        <td class="p-2 border border-gray-600 text-center">$${d.average_value}</td>
+        <td class="p-2 border border-gray-600 text-center whitespace-nowrap">${formattedDate}</td>
+      </tr>`;
+      table.insertAdjacentHTML('beforeend', row);
+    });
+
+    renderPagination(domains.length, limit, page);
 
   } catch (error) {
     console.error('Error:', error);
@@ -63,29 +78,6 @@ async function applyFilters(page = 1, filters = {}) {
         </td>
       </tr>`;
   }
-}
-
-function renderTable(domains, page, limit) {
-  const table = document.getElementById('domain-table');
-  table.innerHTML = '';
-
-  const startIndex = (page - 1) * limit;
-  const paginated = domains.slice(startIndex, startIndex + limit);
-
-  paginated.forEach((d, i) => {
-    const formattedDate = d.date ? d.date.replace(/\n/g, ' ') : 'N/A';
-    const row = `<tr>
-      <td class="p-2 border border-gray-600 text-center">${startIndex + i + 1}</td>
-      <td class="p-2 border border-gray-600 whitespace-nowrap">${d.domain}</td>
-      <td class="p-2 border border-gray-600 text-center">${d.domain_type}</td>
-      <td class="p-2 border border-gray-600 text-center">$${d.auction}</td>
-      <td class="p-2 border border-gray-600 text-center">$${d.marketplace}</td>
-      <td class="p-2 border border-gray-600 text-center">$${d.brokerage}</td>
-      <td class="p-2 border border-gray-600 text-center">$${d.average_value}</td>
-      <td class="p-2 border border-gray-600 text-center whitespace-nowrap">${formattedDate}</td>
-    </tr>`;
-    table.insertAdjacentHTML('beforeend', row);
-  });
 }
 
 function renderPagination(total, limit, current) {
@@ -156,4 +148,7 @@ function getVisiblePages(current, total) {
 }
 
 // Initialize with default filters
-window.onload = () => applyFilters(1);
+window.onload = () => {
+  setDefaultFilters();
+  applyFilters(1);
+};
