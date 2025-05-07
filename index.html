@@ -2,11 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Talxa - Best Tool for Domain Investors</title>
+  
+  <!-- SEO -->
+  <meta name="description" content="Talxa is the best free domain evaluation tool to discover top expired 5L and 6L .com domains daily. Join our Discord for instant alerts." />
+  <meta name="keywords" content="expired domains, 5L.com, 6L.com, domain appraisal, domain investors, Talxa" />
+  <meta name="author" content="Talxa Team" />
+  <meta property="og:title" content="Talxa - Top Expired Domains Daily" />
+  <meta property="og:description" content="Find premium expired 5L and 6L .com domains every day. Join our Discord server and get notified instantly!" />
+  <meta property="og:image" content="PATH_TO_YOUR_ICON_HERE" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Google AdSense Meta Tag -->
-  <meta name="google-adsense-account" content="ca-pub-5000719233865730">
+  <!-- AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-5000719233865730" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6ECTX94TR"></script>
@@ -20,21 +30,35 @@
   <!-- Favicon -->
   <link rel="icon" href="PATH_TO_YOUR_ICON_HERE" />
 
-  <!-- Tailwind and Custom CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-gray-900 text-white font-sans">
+
+  <!-- HEADER -->
   <header class="text-center py-6 bg-gray-800">
     <h1 class="text-3xl font-bold">🌐 Talxa</h1>
-    <p class="mt-2 text-sm text-gray-300">
-      Subscribe to our mail list to receive daily expired .com premium domains evaluations
-      — <a href="mailto:YOUR_EMAIL_HERE" class="underline text-blue-400">Contact Us</a>
+    <p class="mt-1 text-gray-400 text-sm">Best Tool for Domain Investors</p>
+    <p class="mt-1 text-sm text-gray-300">Made with ❤️</p>
+    <p class="mt-2 text-base text-gray-300">
+      Get Notified with Daily TOP 100 Expired Domains on our 
+      <a href="DISCORD_INVITE_LINK_HERE" class="text-blue-400 underline" target="_blank">Discord Server 💬</a>
     </p>
-    <h2 class="text-xl mt-4 font-semibold">TOP 100 Recent Expired Domains</h2>
   </header>
 
-  <section class="p-4 max-w-6xl mx-auto">
+  <!-- ACTION BUTTONS -->
+  <div class="flex justify-center gap-4 mt-4 flex-wrap">
+    <a href="PAYPAL_DONATE_LINK_HERE" class="bg-yellow-400 text-black px-4 py-2 rounded shadow" target="_blank">
+      💸 Donate via PayPal
+    </a>
+    <a href="mailto:YOUR_EMAIL_HERE" class="bg-green-600 text-white px-4 py-2 rounded shadow">
+      📧 Contact Me
+    </a>
+  </div>
+
+  <!-- FILTER BAR -->
+  <section class="mt-6 p-4 max-w-6xl mx-auto">
     <div class="flex flex-wrap gap-4 justify-center text-black">
       <select id="type" class="p-2 rounded text-sm md:text-base">
         <option value="5L.coms & 6L.coms">5L.com & 6L.com</option>
@@ -64,45 +88,42 @@
         <option>150</option>
         <option>200</option>
       </select>
-      <button onclick="applyFilters(1)" class="bg-blue-600 text-white px-4 py-2 rounded text-sm md:text-base">Apply</button>
+
+      <button onclick="applyFilters(1)" class="bg-blue-600 text-white px-4 py-2 rounded text-sm md:text-base">
+        Apply
+      </button>
     </div>
 
-    <!-- PayPal and Discord Buttons -->
-    <div class="flex justify-center gap-4 mt-6 flex-wrap">
-      <a href="PAYPAL_DONATE_LINK_HERE" class="bg-yellow-500 text-black px-4 py-2 rounded text-sm md:text-base" target="_blank">
-        Donate via PayPal
-      </a>
-      <a href="DISCORD_INVITE_LINK_HERE" class="bg-indigo-600 text-white px-4 py-2 rounded text-sm md:text-base" target="_blank">
-        Join Discord
-      </a>
-    </div>
-
+    <!-- DOMAIN TABLE -->
     <div class="mt-6 overflow-x-auto">
       <table class="w-full border-separate border-spacing-0 border border-gray-600 text-sm md:text-base">
         <thead class="bg-gray-700">
           <tr>
-            <th class="p-2 border border-gray-600 whitespace-nowrap">#</th>
-            <th class="p-2 border border-gray-600 whitespace-nowrap">Domain Name</th>
-            <th class="p-2 border border-gray-600 whitespace-nowrap">Type</th>
-            <th class="p-2 border border-gray-600 whitespace-nowrap">Auction</th>
-            <th class="p-2 border border-gray-600 whitespace-nowrap">Marketplace</th>
-            <th class="p-2 border border-gray-600 whitespace-nowrap">Brokerage</th>
-            <th class="p-2 border border-gray-600 whitespace-nowrap">Average</th>
-            <th class="p-2 border border-gray-600 whitespace-nowrap min-w-[100px]">Date</th>
+            <th class="p-2 border border-gray-600">#</th>
+            <th class="p-2 border border-gray-600">Domain Name</th>
+            <th class="p-2 border border-gray-600">Type</th>
+            <th class="p-2 border border-gray-600">Auction</th>
+            <th class="p-2 border border-gray-600">Marketplace</th>
+            <th class="p-2 border border-gray-600">Brokerage</th>
+            <th class="p-2 border border-gray-600">Average</th>
+            <th class="p-2 border border-gray-600 min-w-[100px]">Date</th>
           </tr>
         </thead>
         <tbody id="domain-table" class="bg-gray-800">
-          <!-- Content will be injected -->
+          <!-- Table rows will be injected dynamically -->
         </tbody>
       </table>
     </div>
 
+    <!-- PAGINATION -->
     <div class="text-center mt-4 overflow-x-auto whitespace-nowrap" id="pagination">
-      <!-- Pagination will be injected -->
+      <!-- Pagination controls injected here -->
     </div>
   </section>
 
+  <!-- Custom JS -->
   <script src="script.js"></script>
+
 </body>
 </html>
 
