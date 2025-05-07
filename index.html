@@ -45,48 +45,29 @@
 
   <!-- FILTER BAR -->
   <section class="max-w-6xl mx-auto p-6">
-    <div class="flex flex-wrap justify-center gap-4 mb-8 items-center text-sm text-gray-300">
-
-      <div class="flex flex-col items-start">
-        <label for="type" class="mb-1">Domain Type</label>
-        <select id="type" class="p-2 rounded text-black">
-          <option value="both">5L & 6L</option>
-          <option value="5L">5L only</option>
-          <option value="6L">6L only</option>
-        </select>
-      </div>
-
-      <div class="flex flex-col items-start">
-        <label for="sort" class="mb-1">Sort By</label>
-        <select id="sort" class="p-2 rounded text-black">
-          <option value="average">Sort by Avg</option>
-          <option value="auction">Sort by Auction</option>
-          <option value="marketplace">Sort by Market</option>
-          <option value="brokerage">Sort by Brokerage</option>
-        </select>
-      </div>
-
-      <div class="flex flex-col items-start">
-        <label for="date" class="mb-1">Date Range</label>
-        <select id="date" class="p-2 rounded text-black">
-          <option value="today">Today</option>
-          <option value="yesterday">Yesterday</option>
-          <option value="last7">Last 7 Days</option>
-        </select>
-      </div>
-
-      <div class="flex flex-col items-start">
-        <label for="limit" class="mb-1">Limit</label>
-        <select id="limit" class="p-2 rounded text-black">
-          <option>25</option>
-          <option>50</option>
-          <option>100</option>
-        </select>
-      </div>
-
-      <div class="flex items-end">
-        <button onclick="applyFilters(1)" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500 mt-auto">Apply</button>
-      </div>
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <select id="type" class="p-2 rounded text-black">
+        <option value="both">5L & 6L</option>
+        <option value="5L">5L only</option>
+        <option value="6L">6L only</option>
+      </select>
+      <select id="sort" class="p-2 rounded text-black">
+        <option value="average">Sort by Avg</option>
+        <option value="auction">Sort by Auction</option>
+        <option value="marketplace">Sort by Market</option>
+        <option value="brokerage">Sort by Brokerage</option>
+      </select>
+      <select id="date" class="p-2 rounded text-black">
+        <option value="today">Today</option>
+        <option value="yesterday">Yesterday</option>
+        <option value="last7">Last 7 Days</option>
+      </select>
+      <select id="limit" class="p-2 rounded text-black">
+        <option>25</option>
+        <option>50</option>
+        <option>100</option>
+      </select>
+      <button onclick="applyFilters(1)" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-500">Apply</button>
     </div>
 
     <!-- DOMAIN TABLE -->
@@ -144,4 +125,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
