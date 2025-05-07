@@ -3,7 +3,1008 @@
     "type": "5L+6L",
     "list_type": "top100",
     "date_range": "today",
-    "generated_at": "2025-05-07T11:13:59+02:00"
+    "generated_at": "2025-05-07T23:35:06+02:00"
   },
-  "domains": []
+  "domains": [
+    {
+      "id": 73161,
+      "domain": "bareah.com",
+      "domain_type": "6L",
+      "auction": 1266,
+      "marketplace": 25377,
+      "brokerage": 54448,
+      "average_value": 27030,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73167,
+      "domain": "bactix.com",
+      "domain_type": "6L",
+      "auction": 890,
+      "marketplace": 14013,
+      "brokerage": 31133,
+      "average_value": 15345,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73005,
+      "domain": "zysjpj.com",
+      "domain_type": "6L",
+      "auction": 9,
+      "marketplace": 8699,
+      "brokerage": 30810,
+      "average_value": 13173,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73223,
+      "domain": "gzhans.com",
+      "domain_type": "6L",
+      "auction": 69,
+      "marketplace": 8911,
+      "brokerage": 28808,
+      "average_value": 12596,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72495,
+      "domain": "mssmcp.com",
+      "domain_type": "6L",
+      "auction": 47,
+      "marketplace": 8672,
+      "brokerage": 27304,
+      "average_value": 12008,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73932,
+      "domain": "czsxnt.com",
+      "domain_type": "6L",
+      "auction": 415,
+      "marketplace": 9605,
+      "brokerage": 22589,
+      "average_value": 10870,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74363,
+      "domain": "sosfjn.com",
+      "domain_type": "6L",
+      "auction": 42,
+      "marketplace": 6292,
+      "brokerage": 20838,
+      "average_value": 9057,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73525,
+      "domain": "cookri.com",
+      "domain_type": "6L",
+      "auction": 164,
+      "marketplace": 6394,
+      "brokerage": 18166,
+      "average_value": 8241,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43738,
+      "domain": "sibiv.com",
+      "domain_type": "5L",
+      "auction": 133,
+      "marketplace": 5084,
+      "brokerage": 15226,
+      "average_value": 6814,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74545,
+      "domain": "szezkj.com",
+      "domain_type": "6L",
+      "auction": 35,
+      "marketplace": 4372,
+      "brokerage": 13918,
+      "average_value": 6108,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74064,
+      "domain": "hiygou.com",
+      "domain_type": "6L",
+      "auction": 202,
+      "marketplace": 4554,
+      "brokerage": 12388,
+      "average_value": 5715,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73172,
+      "domain": "ifledu.com",
+      "domain_type": "6L",
+      "auction": 70,
+      "marketplace": 4190,
+      "brokerage": 12353,
+      "average_value": 5538,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73230,
+      "domain": "xrmoto.com",
+      "domain_type": "6L",
+      "auction": 68,
+      "marketplace": 3945,
+      "brokerage": 12101,
+      "average_value": 5371,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73238,
+      "domain": "uncmix.com",
+      "domain_type": "6L",
+      "auction": 69,
+      "marketplace": 3938,
+      "brokerage": 11942,
+      "average_value": 5316,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72334,
+      "domain": "yhnykj.com",
+      "domain_type": "6L",
+      "auction": 78,
+      "marketplace": 4082,
+      "brokerage": 11741,
+      "average_value": 5300,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43779,
+      "domain": "wospd.com",
+      "domain_type": "5L",
+      "auction": 138,
+      "marketplace": 4003,
+      "brokerage": 11016,
+      "average_value": 5052,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73085,
+      "domain": "ifiscr.com",
+      "domain_type": "6L",
+      "auction": 103,
+      "marketplace": 3567,
+      "brokerage": 10301,
+      "average_value": 4657,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72470,
+      "domain": "srfino.com",
+      "domain_type": "6L",
+      "auction": 112,
+      "marketplace": 3651,
+      "brokerage": 10178,
+      "average_value": 4647,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73287,
+      "domain": "zzcykm.com",
+      "domain_type": "6L",
+      "auction": 115,
+      "marketplace": 3546,
+      "brokerage": 9937,
+      "average_value": 4533,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73902,
+      "domain": "IsFall.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 2541,
+      "brokerage": 10904,
+      "average_value": 4482,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72820,
+      "domain": "obsvvs.com",
+      "domain_type": "6L",
+      "auction": 17,
+      "marketplace": 3219,
+      "brokerage": 10137,
+      "average_value": 4458,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73749,
+      "domain": "solgoa.com",
+      "domain_type": "6L",
+      "auction": 38,
+      "marketplace": 3183,
+      "brokerage": 10150,
+      "average_value": 4457,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72664,
+      "domain": "pewexe.com",
+      "domain_type": "6L",
+      "auction": 79,
+      "marketplace": 3311,
+      "brokerage": 9844,
+      "average_value": 4411,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72358,
+      "domain": "remspy.com",
+      "domain_type": "6L",
+      "auction": 49,
+      "marketplace": 3146,
+      "brokerage": 9511,
+      "average_value": 4235,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 42897,
+      "domain": "xkbkq.com",
+      "domain_type": "5L",
+      "auction": 126,
+      "marketplace": 3194,
+      "brokerage": 9176,
+      "average_value": 4165,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 42817,
+      "domain": "nvebi.com",
+      "domain_type": "5L",
+      "auction": 57,
+      "marketplace": 3197,
+      "brokerage": 9062,
+      "average_value": 4105,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43647,
+      "domain": "talcm.com",
+      "domain_type": "5L",
+      "auction": 45,
+      "marketplace": 3052,
+      "brokerage": 9099,
+      "average_value": 4065,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 42728,
+      "domain": "refyf.com",
+      "domain_type": "5L",
+      "auction": 143,
+      "marketplace": 3184,
+      "brokerage": 8581,
+      "average_value": 3969,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43380,
+      "domain": "redjm.com",
+      "domain_type": "5L",
+      "auction": 103,
+      "marketplace": 3097,
+      "brokerage": 8701,
+      "average_value": 3967,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73856,
+      "domain": "dgfzzy.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 2498,
+      "brokerage": 8336,
+      "average_value": 3611,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74387,
+      "domain": "jtuber.com",
+      "domain_type": "6L",
+      "auction": 76,
+      "marketplace": 2747,
+      "brokerage": 7708,
+      "average_value": 3510,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73260,
+      "domain": "ektour.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 2428,
+      "brokerage": 8034,
+      "average_value": 3487,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43304,
+      "domain": "huttt.com",
+      "domain_type": "5L",
+      "auction": 82,
+      "marketplace": 2659,
+      "brokerage": 7460,
+      "average_value": 3400,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43149,
+      "domain": "qlyks.com",
+      "domain_type": "5L",
+      "auction": 205,
+      "marketplace": 2897,
+      "brokerage": 7077,
+      "average_value": 3393,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74559,
+      "domain": "aeidor.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 2137,
+      "brokerage": 7593,
+      "average_value": 3243,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73247,
+      "domain": "pesatz.com",
+      "domain_type": "6L",
+      "auction": 28,
+      "marketplace": 2374,
+      "brokerage": 7102,
+      "average_value": 3168,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74426,
+      "domain": "evstne.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1934,
+      "brokerage": 7096,
+      "average_value": 3010,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74096,
+      "domain": "lasbis.com",
+      "domain_type": "6L",
+      "auction": 11,
+      "marketplace": 2160,
+      "brokerage": 6670,
+      "average_value": 2947,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43210,
+      "domain": "qlsxx.com",
+      "domain_type": "5L",
+      "auction": 35,
+      "marketplace": 2245,
+      "brokerage": 6458,
+      "average_value": 2913,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73509,
+      "domain": "mlbdev.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1850,
+      "brokerage": 6797,
+      "average_value": 2882,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73723,
+      "domain": "dlldtx.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1686,
+      "brokerage": 6470,
+      "average_value": 2719,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73229,
+      "domain": "hdpure.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1932,
+      "brokerage": 6200,
+      "average_value": 2711,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74000,
+      "domain": "moycat.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1928,
+      "brokerage": 6056,
+      "average_value": 2661,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43354,
+      "domain": "mslsj.com",
+      "domain_type": "5L",
+      "auction": 151,
+      "marketplace": 2196,
+      "brokerage": 5589,
+      "average_value": 2645,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74484,
+      "domain": "lssfsy.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1626,
+      "brokerage": 6305,
+      "average_value": 2644,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 42778,
+      "domain": "yxgcl.com",
+      "domain_type": "5L",
+      "auction": 38,
+      "marketplace": 2004,
+      "brokerage": 5849,
+      "average_value": 2630,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73118,
+      "domain": "mazgon.com",
+      "domain_type": "6L",
+      "auction": 25,
+      "marketplace": 1986,
+      "brokerage": 5704,
+      "average_value": 2572,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43335,
+      "domain": "goahu.com",
+      "domain_type": "5L",
+      "auction": 22,
+      "marketplace": 1959,
+      "brokerage": 5732,
+      "average_value": 2571,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74004,
+      "domain": "hoorod.com",
+      "domain_type": "6L",
+      "auction": 41,
+      "marketplace": 1990,
+      "brokerage": 5620,
+      "average_value": 2550,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73333,
+      "domain": "giaset.com",
+      "domain_type": "6L",
+      "auction": 56,
+      "marketplace": 1961,
+      "brokerage": 5552,
+      "average_value": 2523,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72468,
+      "domain": "rakhle.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1596,
+      "brokerage": 5744,
+      "average_value": 2447,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74212,
+      "domain": "tlmann.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1665,
+      "brokerage": 5589,
+      "average_value": 2418,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43152,
+      "domain": "ztcpw.com",
+      "domain_type": "5L",
+      "auction": 49,
+      "marketplace": 1915,
+      "brokerage": 5209,
+      "average_value": 2391,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43754,
+      "domain": "svdog.com",
+      "domain_type": "5L",
+      "auction": 0,
+      "marketplace": 1663,
+      "brokerage": 5432,
+      "average_value": 2365,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72464,
+      "domain": "tleacs.com",
+      "domain_type": "6L",
+      "auction": 64,
+      "marketplace": 1886,
+      "brokerage": 5054,
+      "average_value": 2335,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43675,
+      "domain": "czzqy.com",
+      "domain_type": "5L",
+      "auction": 16,
+      "marketplace": 1773,
+      "brokerage": 5214,
+      "average_value": 2334,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74116,
+      "domain": "rspeck.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1593,
+      "brokerage": 5284,
+      "average_value": 2292,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43751,
+      "domain": "pojew.com",
+      "domain_type": "5L",
+      "auction": 39,
+      "marketplace": 1791,
+      "brokerage": 5041,
+      "average_value": 2290,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73107,
+      "domain": "surcas.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1460,
+      "brokerage": 5342,
+      "average_value": 2267,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74855,
+      "domain": "demsek.com",
+      "domain_type": "6L",
+      "auction": 11,
+      "marketplace": 1740,
+      "brokerage": 5021,
+      "average_value": 2257,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43493,
+      "domain": "nydif.com",
+      "domain_type": "5L",
+      "auction": 29,
+      "marketplace": 1700,
+      "brokerage": 4840,
+      "average_value": 2190,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73764,
+      "domain": "hldate.com",
+      "domain_type": "6L",
+      "auction": 48,
+      "marketplace": 1758,
+      "brokerage": 4756,
+      "average_value": 2187,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74353,
+      "domain": "kohlsu.com",
+      "domain_type": "6L",
+      "auction": 37,
+      "marketplace": 1688,
+      "brokerage": 4775,
+      "average_value": 2167,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73686,
+      "domain": "kosoti.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1599,
+      "brokerage": 4758,
+      "average_value": 2119,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43144,
+      "domain": "wwzai.com",
+      "domain_type": "5L",
+      "auction": 0,
+      "marketplace": 1530,
+      "brokerage": 4822,
+      "average_value": 2117,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43101,
+      "domain": "zuxix.com",
+      "domain_type": "5L",
+      "auction": 50,
+      "marketplace": 1690,
+      "brokerage": 4576,
+      "average_value": 2105,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74164,
+      "domain": "vagasp.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1440,
+      "brokerage": 4848,
+      "average_value": 2096,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43224,
+      "domain": "xwxxw.com",
+      "domain_type": "5L",
+      "auction": 9,
+      "marketplace": 1617,
+      "brokerage": 4659,
+      "average_value": 2095,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74190,
+      "domain": "vertay.com",
+      "domain_type": "6L",
+      "auction": 29,
+      "marketplace": 1637,
+      "brokerage": 4589,
+      "average_value": 2085,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73129,
+      "domain": "djmann.com",
+      "domain_type": "6L",
+      "auction": 7,
+      "marketplace": 1610,
+      "brokerage": 4538,
+      "average_value": 2052,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43030,
+      "domain": "bxfkj.com",
+      "domain_type": "5L",
+      "auction": 77,
+      "marketplace": 1721,
+      "brokerage": 4298,
+      "average_value": 2032,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43427,
+      "domain": "kcaly.com",
+      "domain_type": "5L",
+      "auction": 13,
+      "marketplace": 1599,
+      "brokerage": 4453,
+      "average_value": 2022,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43114,
+      "domain": "aahut.com",
+      "domain_type": "5L",
+      "auction": 0,
+      "marketplace": 1438,
+      "brokerage": 4507,
+      "average_value": 1982,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73210,
+      "domain": "laohoa.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1184,
+      "brokerage": 4686,
+      "average_value": 1957,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 72787,
+      "domain": "coarbs.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1505,
+      "brokerage": 4356,
+      "average_value": 1954,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73712,
+      "domain": "dinapo.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1371,
+      "brokerage": 4478,
+      "average_value": 1950,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74123,
+      "domain": "romool.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1287,
+      "brokerage": 4548,
+      "average_value": 1945,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74396,
+      "domain": "pocoha.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1288,
+      "brokerage": 4538,
+      "average_value": 1942,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73231,
+      "domain": "TotoVr.com",
+      "domain_type": "6L",
+      "auction": 96,
+      "marketplace": 1663,
+      "brokerage": 4059,
+      "average_value": 1939,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 42999,
+      "domain": "nndlq.com",
+      "domain_type": "5L",
+      "auction": 40,
+      "marketplace": 1553,
+      "brokerage": 4220,
+      "average_value": 1938,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43773,
+      "domain": "locpi.com",
+      "domain_type": "5L",
+      "auction": 23,
+      "marketplace": 1540,
+      "brokerage": 4232,
+      "average_value": 1932,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43268,
+      "domain": "mvcsa.com",
+      "domain_type": "5L",
+      "auction": 0,
+      "marketplace": 1329,
+      "brokerage": 4421,
+      "average_value": 1917,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43172,
+      "domain": "zjmyy.com",
+      "domain_type": "5L",
+      "auction": 16,
+      "marketplace": 1484,
+      "brokerage": 4194,
+      "average_value": 1898,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43264,
+      "domain": "ieadm.com",
+      "domain_type": "5L",
+      "auction": 2,
+      "marketplace": 1462,
+      "brokerage": 4160,
+      "average_value": 1875,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43370,
+      "domain": "necdl.com",
+      "domain_type": "5L",
+      "auction": 0,
+      "marketplace": 1432,
+      "brokerage": 4190,
+      "average_value": 1874,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74357,
+      "domain": "suzchb.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1326,
+      "brokerage": 4274,
+      "average_value": 1867,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74807,
+      "domain": "tstios.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1057,
+      "brokerage": 4515,
+      "average_value": 1857,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73753,
+      "domain": "dywifi.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1105,
+      "brokerage": 4449,
+      "average_value": 1851,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74156,
+      "domain": "lizare.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1174,
+      "brokerage": 4295,
+      "average_value": 1823,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43338,
+      "domain": "ebzzo.com",
+      "domain_type": "5L",
+      "auction": 0,
+      "marketplace": 1339,
+      "brokerage": 4071,
+      "average_value": 1803,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43111,
+      "domain": "kagok.com",
+      "domain_type": "5L",
+      "auction": 16,
+      "marketplace": 1418,
+      "brokerage": 3929,
+      "average_value": 1788,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73195,
+      "domain": "kleetz.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1121,
+      "brokerage": 4087,
+      "average_value": 1736,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43344,
+      "domain": "locbu.com",
+      "domain_type": "5L",
+      "auction": 106,
+      "marketplace": 1524,
+      "brokerage": 3519,
+      "average_value": 1716,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73740,
+      "domain": "elteen.com",
+      "domain_type": "6L",
+      "auction": 68,
+      "marketplace": 1447,
+      "brokerage": 3592,
+      "average_value": 1702,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 74818,
+      "domain": "ligacb.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1252,
+      "brokerage": 3835,
+      "average_value": 1696,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73822,
+      "domain": "gotemm.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1245,
+      "brokerage": 3821,
+      "average_value": 1689,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73586,
+      "domain": "hevala.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1112,
+      "brokerage": 3839,
+      "average_value": 1650,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 42962,
+      "domain": "aenin.com",
+      "domain_type": "5L",
+      "auction": 0,
+      "marketplace": 1227,
+      "brokerage": 3697,
+      "average_value": 1641,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 73084,
+      "domain": "waidef.com",
+      "domain_type": "6L",
+      "auction": 0,
+      "marketplace": 1302,
+      "brokerage": 3582,
+      "average_value": 1628,
+      "date": "2025-05-06T22:00:00.000Z"
+    },
+    {
+      "id": 43243,
+      "domain": "avbux.com",
+      "domain_type": "5L",
+      "auction": 11,
+      "marketplace": 1312,
+      "brokerage": 3538,
+      "average_value": 1620,
+      "date": "2025-05-06T22:00:00.000Z"
+    }
+  ]
 }
