@@ -1,2 +1,1 @@
-# Talxa.com
-Talxa - Best Tool For Domain Investors
+Daily Expired Domains Lists Update!!
