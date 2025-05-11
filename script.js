@@ -1,18 +1,6 @@
 let currentPage = 1;
 const DEFAULT_LIMIT = 25;
 
-function detectAdBlock() {
-  return new Promise((resolve) => {
-    resolve(false); // Always return false since we're not checking for ads now
-  });
-}
-
-function showAdWall() {
-  return new Promise((resolve) => {
-    resolve(true); // Always resolve as true to bypass ad check
-  });
-}
-
 document.addEventListener('DOMContentLoaded', function() {
   const perfData = window.performance.timing;
   const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;

@@ -55,12 +55,3 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
-}
-
-.adsbox {
-  position: absolute;
-  left: -9999px;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-}
