@@ -2,298 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Talxa | Premium 5L & 6L Domain Valuation Tool | Expired Domains Appraisal</title>
-  <meta name="description" content="Free domain appraisal tool for premium 5L.com & 6L.com domains. Get accurate domain valuation, expired domain lists, and bulk domain appraisal. Join our Discord for daily updates!" />
-  <meta name="keywords" content="talxa, talxa.com, expired domains, premium domains, 5L.com, 6L.com, domain valuation, domain estimation, domain appraisal, domain name valuation, domain name appraisal, bulk domain appraisal, premium 5L domains, domain investors" />
-  <meta name="author" content="Talxa Team" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://talxa.com" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://talxa.com/" />
-  <meta property="og:title" content="Talxa | Premium 5L & 6L Domain Valuation Tool" />
-  <meta property="og:description" content="Free domain appraisal for premium 5L.com and 6L.com domains. Get accurate expired domain valuation and daily updated lists." />
-  <meta property="og:image" content="https://talxa.com/assets/social-preview.jpg" />
-
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://talxa.com/" />
-  <meta property="twitter:title" content="Talxa | Premium 5L & 6L Domain Valuation Tool" />
-  <meta property="twitter:description" content="Free domain appraisal for premium 5L.com and 6L.com domains. Get accurate expired domain valuation and daily updated lists." />
-  <meta property="twitter:image" content="https://talxa.com/assets/social-preview.jpg" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Talxa Domain Valuation Tool",
-    "url": "https://talxa.com",
-    "description": "Premium domain appraisal tool for 5L and 6L .com domains with daily updated valuation data",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    }
-  }
-  </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Talxa - Recent Expired Domains List</title>
+  <meta name="description" content="Daily updated list of expired 5L and 6L .com domains with valuation estimates" />
+  <meta name="keywords" content="talxa, expired domains, 5L.com, 6L.com, domain lists" />
+  
+  <!-- AdSense Auto Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5000719233865730" crossorigin="anonymous"></script>
   
-  <script>
-    window.google_analytics_uacct = "G-F6ECTX94TR";
-    window.google_consent_mode = 'basic';
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'analytics_storage': 'denied',
-      'wait_for_update': 500
-    });
-    gtag('set', 'ads_data_redaction', true);
-  </script>
-
-  <link rel="preload" href="script.js" as="script">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style">
-  <link rel="dns-prefetch" href="//www.googletagmanager.com">
-  <link rel="dns-prefetch" href="//discord.com">
-
-  <meta name="google-adsense-account" content="ca-pub-5000719233865730" />
-
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6ECTX94TR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-F6ECTX94TR');
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied'
+    });
   </script>
 
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="manifest" href="assets/site.webmanifest">
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
+  <!-- Ad Wall -->
   <div id="ad-wall" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:9999;flex-direction:column;justify-content:center;align-items:center;color:white;padding:20px;text-align:center;">
     <h2 class="text-2xl font-bold mb-4">Support Talxa</h2>
-    <p class="mb-6">Please watch this short ad to continue using our free domain valuation service</p>
+    <p class="mb-6">Please watch this short ad to continue</p>
     <div id="rewarded-ad-container" style="width:300px;height:250px;"></div>
-    <button id="skip-ad" class="mt-6 px-4 py-2 bg-gray-600 rounded hover:bg-gray-500">Skip Ad (Limited Features)</button>
+    <button id="skip-ad" class="mt-6 px-4 py-2 bg-gray-600 rounded hover:bg-gray-500">Skip Ad</button>
   </div>
 
-  <div id="consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2d3748;color:white;padding:1rem;z-index:1000;flex-wrap:wrap;justify-content:space-between;align-items:center;box-shadow:0 -2px 10px rgba(0,0,0,0.2);">
-    <p style="margin:0 1rem 1rem 0;flex:1;min-width:300px;">We use cookies and similar technologies to provide our services and analyze site usage. Please review our privacy policy and consent to data collection to continue using Talxa.</p>
-    <div class="consent-buttons" style="display:flex;gap:1rem;">
-      <button id="accept-consent" class="consent-btn" style="padding:0.5rem 1rem;background:#4299e1;color:white;border:none;border-radius:4px;cursor:pointer;">Accept All</button>
-      <button id="reject-consent" class="consent-btn" style="padding:0.5rem 1rem;background:#e53e3e;color:white;border:none;border-radius:4px;cursor:pointer;">Reject All</button>
-      <button id="customize-consent" class="consent-btn" style="padding:0.5rem 1rem;background:#ed8936;color:white;border:none;border-radius:4px;cursor:pointer;">Customize</button>
-    </div>
-  </div>
-
-  <div id="consent-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);z-index:1001;color:white;padding:2rem;overflow:auto;">
-    <div style="max-width:800px;margin:2rem auto;background:#2d3748;padding:2rem;border-radius:8px;">
-      <h2 style="font-size:1.5rem;margin-bottom:1rem;">Privacy Settings</h2>
-      <p style="margin-bottom:2rem;">Choose which types of cookies you want to accept. Necessary cookies are required for the website to function properly.</p>
-      <div style="margin-bottom:2rem;">
-        <div style="display:flex;justify-content:space-between;margin-bottom:1rem;">
-          <div>
-            <h3 style="font-size:1.2rem;margin-bottom:0.5rem;">Necessary Cookies</h3>
-            <p style="color:#a0aec0;">Required for basic site functionality</p>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="necessary-cookies" checked disabled>
-            <span class="slider round"></span>
-          </label>
-        </div>
-        <div style="display:flex;justify-content:space-between;margin-bottom:1rem;">
-          <div>
-            <h3 style="font-size:1.2rem;margin-bottom:0.5rem;">Analytics Cookies</h3>
-            <p style="color:#a0aec0;">Help us improve our website</p>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="analytics-cookies">
-            <span class="slider round"></span>
-          </label>
-        </div>
-        <div style="display:flex;justify-content:space-between;">
-          <div>
-            <h3 style="font-size:1.2rem;margin-bottom:0.5rem;">Advertising Cookies</h3>
-            <p style="color:#a0aec0;">Support our service through ads</p>
-          </div>
-          <label class="switch">
-            <input type="checkbox" id="advertising-cookies">
-            <span class="slider round"></span>
-          </label>
-        </div>
-      </div>
-      <div style="display:flex;justify-content:flex-end;gap:1rem;">
-        <button id="save-consent" style="padding:0.5rem 1rem;background:#4299e1;color:white;border:none;border-radius:4px;cursor:pointer;">Save Settings</button>
-        <button id="cancel-consent" style="padding:0.5rem 1rem;background:#e53e3e;color:white;border:none;border-radius:4px;cursor:pointer;">Cancel</button>
-      </div>
+  <!-- Simple Consent Banner -->
+  <div id="consent-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#2d3748;color:white;padding:1rem;z-index:1000;text-align:center;">
+    <p class="mb-2">We use cookies to provide our service</p>
+    <div style="display:flex;gap:1rem;justify-content:center;">
+      <button id="accept-consent" class="px-4 py-2 bg-blue-600 rounded">Accept</button>
+      <button id="reject-consent" class="px-4 py-2 bg-gray-600 rounded">Reject</button>
     </div>
   </div>
 
   <header class="text-center py-6 bg-gray-800">
-    <h1 class="text-3xl md:text-4xl font-bold">🌟 Talxa - Premium Domain Valuation Tool</h1>
-    <p class="mt-1 text-gray-400 text-sm md:text-base">Accurate Appraisal for 5L & 6L .COM Domains</p>
-    <p class="mt-2 text-sm md:text-base text-gray-300">
-      📢 Join our <a href="https://discord.gg/HkChQzsrQS" class="text-blue-400 underline" target="_blank" rel="noopener noreferrer">Discord Server</a> for instant domain alerts! 🚀
-    </p>
-    <div class="flex justify-center gap-4 mt-4 flex-wrap">
-      <a href="https://www.paypal.com/ncp/payment/DGL3GJ73N7VKC" class="bg-yellow-400 text-black px-4 py-2 rounded shadow text-sm md:text-base" target="_blank" rel="noopener noreferrer">💸 Support Our Domain Tools</a>
-      <a href="mailto:admin@Talxa.com" class="bg-green-600 text-white px-4 py-2 rounded shadow text-sm md:text-base">📬 Domain Inquiry</a>
+    <h1 class="text-3xl font-bold">🌐 Talxa</h1>
+    <p class="mt-2 text-sm text-gray-300">Daily updated list of expired 5L & 6L .com domains</p>
+    <div class="flex justify-center gap-4 mt-4">
+      <a href="https://www.paypal.com/ncp/payment/DGL3GJ73N7VKC" class="bg-yellow-400 text-black px-4 py-2 rounded shadow" target="_blank">💸 Support Us</a>
+      <a href="mailto:admin@Talxa.com" class="bg-blue-600 text-white px-4 py-2 rounded shadow">📧 Contact Us</a>
     </div>
   </header>
 
-  <section class="max-w-6xl mx-auto px-4 py-8">
-    <div class="bg-gray-800 p-6 rounded-lg">
-      <h2 class="text-2xl font-bold mb-4">Premium Domain Valuation Tool</h2>
-      <p class="mb-4">Talxa provides the most accurate domain appraisal for premium 5-letter (5L) and 6-letter (6L) .com domains. Our valuation algorithm analyzes thousands of domain sales to give you reliable estimates for:</p>
-      <ul class="list-disc pl-6 mb-4">
-        <li class="mb-2">Expired domains valuation</li>
-        <li class="mb-2">Bulk domain name appraisal</li>
-        <li class="mb-2">Auction price estimation</li>
-        <li class="mb-2">Marketplace valuation</li>
-        <li class="mb-2">Brokerage price estimation</li>
-      </ul>
-      <p>Discover undervalued domains and make informed investment decisions with our free domain valuation tool.</p>
-    </div>
-  </section>
-
-  <section class="max-w-6xl mx-auto px-4 py-6">
-    <div class="bg-gray-800 p-6 rounded-lg">
-      <h2 class="text-2xl font-bold mb-4">How to Use Talxa Domain Valuation Tool</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-700 p-4 rounded">
-          <h3 class="font-bold text-lg mb-2">1. Select Domain Type</h3>
-          <p>Choose between 5L.com, 6L.com, or both to find premium expired domains matching your criteria.</p>
-        </div>
-        <div class="bg-gray-700 p-4 rounded">
-          <h3 class="font-bold text-lg mb-2">2. Filter Valuation Type</h3>
-          <p>View auction estimates, marketplace valuations, brokerage prices, or average appraisals.</p>
-        </div>
-        <div class="bg-gray-700 p-4 rounded">
-          <h3 class="font-bold text-lg mb-2">3. Analyze Results</h3>
-          <p>Compare valuations across different platforms to identify the best domain investments.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-6 p-4 max-w-6xl mx-auto">
+  <section class="p-4 max-w-6xl mx-auto">
     <div class="flex flex-wrap gap-4 justify-center text-black">
-      <select id="type" class="p-2 rounded text-sm md:text-base" aria-label="Domain Type">
-        <option value="5L.coms & 6L.coms">5L & 6L .COM Domains</option>
-        <option value="5L.coms">Premium 5L Domains</option>
-        <option value="6L.coms">Premium 6L Domains</option>
+      <select id="type" class="p-2 rounded">
+        <option value="5L.coms & 6L.coms">5L & 6L .COM</option>
+        <option value="5L.coms">5L.com only</option>
+        <option value="6L.coms">6L.com only</option>
       </select>
-      <select id="sort" class="p-2 rounded text-sm md:text-base" aria-label="Sort By">
-        <option value="marketplace">Marketplace Valuation</option>
-        <option value="auction">Auction Estimation</option>
-        <option value="brokerage">Brokerage Estimation</option>
-        <option value="average">Average Appraisal</option>
+
+      <select id="sort" class="p-2 rounded">
+        <option value="marketplace">Marketplace Value</option>
+        <option value="auction">Auction Estimate</option>
+        <option value="brokerage">Brokerage Value</option>
+        <option value="average">Average Value</option>
       </select>
-      <select id="date" class="p-2 rounded text-sm md:text-base" aria-label="Date Range">
-        <option value="today">Today's Domains</option>
-        <option value="yesterday">Yesterday's Domains</option>
+
+      <select id="date" class="p-2 rounded">
+        <option value="today">Today</option>
+        <option value="yesterday">Yesterday</option>
         <option value="last7days">Last 7 Days</option>
-        <option value="last30days">Last 30 Days</option>
       </select>
-      <select id="limit" class="p-2 rounded text-sm md:text-base" aria-label="Results Limit">
+
+      <select id="limit" class="p-2 rounded">
         <option>25</option>
         <option>50</option>
-        <option>75</option>
         <option>100</option>
-        <option>150</option>
-        <option>200</option>
       </select>
-      <button onclick="applyFilters(1)" class="bg-blue-600 text-white px-4 py-2 rounded text-sm md:text-base">Get Domain Valuations</button>
+      <button onclick="applyFilters(1)" class="bg-blue-600 text-white px-4 py-2 rounded">Apply</button>
     </div>
 
     <div class="mt-6 overflow-x-auto">
-      <table class="w-full border-separate border-spacing-0 border border-gray-600 text-sm md:text-base">
+      <table class="w-full border-separate border-spacing-0 border border-gray-600">
         <thead class="bg-gray-700">
           <tr>
             <th class="p-2 border border-gray-600">#</th>
-            <th class="p-2 border border-gray-600">Domain Name</th>
+            <th class="p-2 border border-gray-600">Domain</th>
             <th class="p-2 border border-gray-600">Type</th>
             <th class="p-2 border border-gray-600">Auction</th>
             <th class="p-2 border border-gray-600">Marketplace</th>
             <th class="p-2 border border-gray-600">Brokerage</th>
             <th class="p-2 border border-gray-600">Average</th>
-            <th class="p-2 border border-gray-600 min-w-[100px]">Date</th>
+            <th class="p-2 border border-gray-600">Expired</th>
           </tr>
         </thead>
         <tbody id="domain-table" class="bg-gray-800"></tbody>
       </table>
     </div>
 
-    <div class="text-center mt-4 overflow-x-auto whitespace-nowrap" id="pagination"></div>
-  </section>
-
-  <section class="max-w-6xl mx-auto px-4 py-8 bg-gray-800 rounded-lg">
-    <h2 class="text-2xl font-bold mb-6 text-center">Why Domain Investors Choose Talxa</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div>
-        <h3 class="text-xl font-semibold mb-3">Comprehensive Valuation Metrics</h3>
-        <p class="mb-4">Unlike other domain appraisal tools, Talxa provides three distinct valuation metrics:</p>
-        <ul class="list-disc pl-6">
-          <li class="mb-2">Auction Estimate: What the domain might sell for at auction</li>
-          <li class="mb-2">Marketplace Value: Estimated aftermarket sale price</li>
-          <li class="mb-2">Brokerage Valuation: Professional broker assessment</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold mb-3">Premium Domain Specialization</h3>
-        <p class="mb-4">We focus exclusively on premium 5L and 6L .com domains because:</p>
-        <ul class="list-disc pl-6">
-          <li class="mb-2">Shorter domains have higher resale value</li>
-          <li class="mb-2">5L.com domains are increasingly rare</li>
-          <li class="mb-2">6L.com domains offer great brandability</li>
-        </ul>
-      </div>
-    </div>
+    <div class="text-center mt-4" id="pagination"></div>
   </section>
 
   <section class="max-w-6xl mx-auto px-4 py-8">
-    <h2 class="text-2xl font-bold mb-6 text-center">Domain Valuation FAQs</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-gray-800 p-6 rounded-lg">
-        <h3 class="text-xl font-semibold mb-3">What is a 5L or 6L domain?</h3>
-        <p>A 5L domain is a 5-letter .com domain name, while a 6L domain is a 6-letter .com domain. These are considered premium domains due to their brevity and memorability.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-lg">
-        <h3 class="text-xl font-semibold mb-3">How accurate are your domain valuations?</h3>
-        <p>Our domain appraisal algorithm analyzes thousands of historical sales to provide the most accurate estimates for auction, marketplace, and brokerage valuations.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-lg">
-        <h3 class="text-xl font-semibold mb-3">How often is the domain data updated?</h3>
-        <p>We update our expired domains list daily, providing fresh valuation data for newly available premium domains.</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-lg">
-        <h3 class="text-xl font-semibold mb-3">Can I get bulk domain appraisals?</h3>
-        <p>Yes! Our tool supports bulk domain name appraisal. Simply use the filters to view valuations for multiple domains at once.</p>
-      </div>
+    <h2 class="text-xl font-bold mb-4 text-center">About This Tool</h2>
+    <div class="bg-gray-800 p-4 rounded">
+      <p class="mb-2">This tool shows recently expired 5L and 6L .com domains.</p>
+      <p class="mb-2">Domains are sorted by your selected value type (highest to lowest).</p>
+      <p>Lists are updated daily with new expired domains.</p>
     </div>
   </section>
 
-  <footer class="bg-gray-800 py-8 mt-12">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-xl font-bold mb-4">Talxa - Premium Domain Valuation</h2>
-      <p class="mb-4">The most accurate tool for expired domain appraisal and premium domain valuation</p>
-      <div class="flex justify-center gap-4 mb-6">
-        <a href="https://discord.gg/HkChQzsrQS" class="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Discord</a>
-        <a href="mailto:admin@Talxa.com" class="text-blue-400 hover:underline">Contact</a>
-        <a href="https://www.paypal.com/ncp/payment/DGL3GJ73N7VKC" class="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Support Us</a>
-      </div>
-      <p class="text-sm text-gray-400">© 2025 Talxa.com - All Rights Reserved</p>
-    </div>
+  <footer class="bg-gray-800 py-6 text-center">
+    <p class="text-sm text-gray-400">© 2025 Talxa.com</p>
   </footer>
 
   <script src="script.js"></script>
