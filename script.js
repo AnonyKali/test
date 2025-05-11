@@ -1,37 +1,120 @@
 let currentPage = 1;
 const DEFAULT_LIMIT = 25;
+let adViews = 0;
+const MAX_FREE_VIEWS = 1;
 
-// Track page load time
-document.addEventListener('DOMContentLoaded', function() {
-  const perfData = window.performance.timing;
-  const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-  gtag('event', 'timing_complete', {
-    'name': 'pageLoad',
-    'value': pageLoadTime,
-    'event_category': 'JS Dependencies'
-  });
-
-  // Track link clicks
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function() {
-      gtag('event', 'link_click', {
-        'event_category': 'Outbound Link',
-        'event_label': this.href
-      });
-    });
-  });
-});
-
-// Function to send custom events to Google Analytics
-function sendGAEvent(category, action, label = '', value = '') {
-  gtag('event', action, {
-    'event_category': category,
-    'event_label': label,
-    'value': value
+function detectAdBlock() {
+  return new Promise((resolve) => {
+    const ad = document.createElement('div');
+    ad.innerHTML = '&nbsp;';
+    ad.className = 'adsbox';
+    ad.style.position = 'absolute';
+    ad.style.left = '-9999px';
+    ad.style.height = '1px';
+    ad.style.width = '1px';
+    ad.style.overflow = 'hidden';
+    document.body.appendChild(ad);
+    
+    setTimeout(() => {
+      const isBlocked = ad.offsetHeight === 0;
+      document.body.removeChild(ad);
+      resolve(isBlocked);
+    }, 100);
   });
 }
 
-// Set default values on page load
+function showAdWall() {
+  return new Promise((resolve) => {
+    const adWall = document.getElementById('ad-wall');
+    adWall.style.display = 'flex';
+    
+    const adContainer = document.getElementById('rewarded-ad-container');
+    const adScript = document.createElement('script');
+    adScript.innerHTML = `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-5000719233865730", enable_page_level_ads: true, overlays: {bottom: true}});`;
+    adContainer.appendChild(adScript);
+    
+    document.getElementById('skip-ad').addEventListener('click', () => {
+      adWall.style.display = 'none';
+      resolve(false);
+    });
+    
+    const observer = new MutationObserver(() => {
+      if (!adContainer.querySelector('iframe')) {
+        adWall.style.display = 'none';
+        resolve(true);
+        observer.disconnect();
+      }
+    });
+    observer.observe(adContainer, {childList: true});
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const perfData = window.performance.timing;
+  const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+  gtag('event', 'timing_complete', {name: 'pageLoad', value: pageLoadTime, event_category: 'JS Dependencies'});
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      gtag('event', 'link_click', {event_category: 'Outbound Link', event_label: this.href});
+    });
+  });
+
+  const consentBanner = document.getElementById('consent-banner');
+  const consentModal = document.getElementById('consent-modal');
+  const consentGiven = localStorage.getItem('consentGiven');
+  
+  if (!consentGiven) {
+    consentBanner.style.display = 'flex';
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted'
+    });
+  }
+  
+  document.getElementById('accept-consent').addEventListener('click', () => {
+    localStorage.setItem('consentGiven', 'all');
+    gtag('consent', 'update', {'ad_storage': 'granted', 'analytics_storage': 'granted'});
+    consentBanner.style.display = 'none';
+  });
+  
+  document.getElementById('reject-consent').addEventListener('click', () => {
+    localStorage.setItem('consentGiven', 'none');
+    gtag('consent', 'update', {'ad_storage': 'denied', 'analytics_storage': 'denied'});
+    consentBanner.style.display = 'none';
+  });
+  
+  document.getElementById('customize-consent').addEventListener('click', () => {
+    consentModal.style.display = 'block';
+  });
+  
+  document.getElementById('cancel-consent').addEventListener('click', () => {
+    consentModal.style.display = 'none';
+  });
+  
+  document.getElementById('save-consent').addEventListener('click', () => {
+    const analytics = document.getElementById('analytics-cookies').checked;
+    const advertising = document.getElementById('advertising-cookies').checked;
+    localStorage.setItem('consentGiven', 'custom');
+    gtag('consent', 'update', {
+      'analytics_storage': analytics ? 'granted' : 'denied',
+      'ad_storage': advertising ? 'granted' : 'denied'
+    });
+    consentModal.style.display = 'none';
+    consentBanner.style.display = 'none';
+  });
+
+  window.addEventListener('popstate', () => { adViews++; });
+  adViews++;
+});
+
+function sendGAEvent(category, action, label = '', value = '') {
+  gtag('event', action, {'event_category': category, 'event_label': label, 'value': value});
+}
+
 function setDefaultFilters() {
   document.getElementById('type').value = "5L.coms & 6L.coms";
   document.getElementById('sort').value = "marketplace";
@@ -41,26 +124,36 @@ function setDefaultFilters() {
 }
 
 async function applyFilters(page = 1) {
+  if (page > 1 && adViews >= MAX_FREE_VIEWS) {
+    const adBlockDetected = await detectAdBlock();
+    if (adBlockDetected) {
+      const proceed = confirm("Please disable your ad blocker to continue using Talxa. Our service relies on ad revenue.");
+      if (!proceed) return;
+    }
+    const watchedAd = await showAdWall();
+    if (!watchedAd) {
+      alert("Some features may be limited. Please consider supporting us by watching ads.");
+      return;
+    }
+    adViews = 0;
+  }
+
   currentPage = page;
   const type = document.getElementById('type').value;
   const sort = document.getElementById('sort').value;
   const date = document.getElementById('date').value;
   const limit = parseInt(document.getElementById('limit').value);
 
-  // Track the applied filters
   sendGAEvent('Filter Applied', 'Type', type);
   sendGAEvent('Filter Applied', 'Sort', sort);
   sendGAEvent('Filter Applied', 'Date', date);
   sendGAEvent('Filter Applied', 'Limit', limit);
 
-  // Track filter combinations as virtual pageviews
-  const filterState = `type=${type}|sort=${sort}|date=${date}|limit=${limit}`;
   gtag('event', 'page_view', {
-    'page_title': `Filtered Domains: ${filterState}`,
-    'page_path': `/?${filterState}`
+    'page_title': `Filtered Domains: type=${type}|sort=${sort}|date=${date}|limit=${limit}`,
+    'page_path': `/?type=${type}|sort=${sort}|date=${date}|limit=${limit}`
   });
 
-  // Map UI selections to JSON filenames
   const typeMap = {
     "5L.coms & 6L.coms": "all",
     "5L.coms": "5L",
@@ -87,15 +180,10 @@ async function applyFilters(page = 1) {
   try {
     const response = await fetch(`/Lists/${filename}${cacheBuster}`);
     if (!response.ok) throw new Error('Data not found');
-
     const { domains } = await response.json();
-
-    // Track page view based on domain list
     sendGAEvent('Page View', 'Domain List View', filename);
-
     const table = document.getElementById('domain-table');
     table.innerHTML = '';
-
     const startIndex = (page - 1) * limit;
     const paginated = domains.slice(startIndex, startIndex + limit);
 
@@ -112,39 +200,23 @@ async function applyFilters(page = 1) {
         <td class="p-2 border border-gray-600 text-center whitespace-nowrap">${formattedDate}</td>
       </tr>`;
       table.insertAdjacentHTML('beforeend', row);
-
-      // Track row usage
       sendGAEvent('Domain Interaction', 'Row Displayed', d.domain);
     });
 
     renderPagination(domains.length, limit, page);
-
   } catch (error) {
-    handleSEOFriendlyError(error);
-  }
-}
-
-function handleSEOFriendlyError(error) {
-  console.error('Error:', error);
-  const errorContainer = document.getElementById('domain-table');
-  errorContainer.innerHTML = `
-    <tr>
+    console.error('Error:', error);
+    const errorContainer = document.getElementById('domain-table');
+    errorContainer.innerHTML = `<tr>
       <td colspan="8" class="p-4 text-center border border-gray-600">
         <div class="text-red-400 mb-2">Error loading domain data</div>
         <p class="text-gray-300 text-sm">We're unable to load the domain valuations right now.</p>
         <p class="text-gray-300 text-sm mt-2">Try refreshing the page or check back later.</p>
-        <button onclick="applyFilters(${currentPage})" 
-                class="mt-3 bg-blue-600 text-white px-3 py-1 rounded text-sm">
-          Retry
-        </button>
+        <button onclick="applyFilters(${currentPage})" class="mt-3 bg-blue-600 text-white px-3 py-1 rounded text-sm">Retry</button>
       </td>
     </tr>`;
-  
-  // Track the error for SEO diagnostics
-  gtag('event', 'exception', {
-    'description': error.message,
-    'fatal': false
-  });
+    gtag('event', 'exception', {description: error.message, fatal: false});
+  }
 }
 
 function renderPagination(total, limit, current) {
@@ -156,69 +228,41 @@ function renderPagination(total, limit, current) {
     return;
   }
 
-  // Previous button
-  html += `<button onclick="applyFilters(${current - 1})"
-           class="mx-1 px-3 py-1 bg-gray-700 rounded ${current === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-600'}">
-           &laquo; Prev</button>`;
+  html += `<button onclick="applyFilters(${current - 1})" class="mx-1 px-3 py-1 bg-gray-700 rounded ${current === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-600'}">&laquo; Prev</button>`;
 
-  // Page numbers
   const visiblePages = getVisiblePages(current, pages);
-
   visiblePages.forEach((page, index) => {
     if (page === '...') {
       html += `<span class="mx-1">...</span>`;
     } else {
-      html += `<button onclick="applyFilters(${page})"
-               class="mx-1 px-3 py-1 ${page === current ? 'bg-blue-600' : 'bg-gray-700 hover:bg-gray-600'} rounded">
-               ${page}</button>`;
+      html += `<button onclick="applyFilters(${page})" class="mx-1 px-3 py-1 ${page === current ? 'bg-blue-600' : 'bg-gray-700 hover:bg-gray-600'} rounded">${page}</button>`;
     }
   });
 
-  // Next button
-  html += `<button onclick="applyFilters(${current + 1})"
-           class="mx-1 px-3 py-1 bg-gray-700 rounded ${current === pages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-600'}">
-           Next &raquo;</button>`;
-
+  html += `<button onclick="applyFilters(${current + 1})" class="mx-1 px-3 py-1 bg-gray-700 rounded ${current === pages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-600'}">Next &raquo;</button>`;
   document.getElementById('pagination').innerHTML = html;
 }
 
 function getVisiblePages(current, total) {
   const visible = [];
-  const range = 2; // Number of pages to show around current
-
-  // Always show first page
+  const range = 2;
   visible.push(1);
-
-  // Show pages around current
   for (let i = Math.max(2, current - range); i <= Math.min(total - 1, current + range); i++) {
     visible.push(i);
   }
-
-  // Always show last page if different
-  if (total > 1) {
-    visible.push(total);
-  }
-
-  // Add ellipsis if gaps exist
+  if (total > 1) visible.push(total);
   const simplified = [];
   let prev = 0;
-
   visible.forEach(page => {
-    if (page - prev > 1) {
-      simplified.push('...');
-    }
+    if (page - prev > 1) simplified.push('...');
     simplified.push(page);
     prev = page;
   });
-
   return simplified;
 }
 
-// Initialize with default filters
 window.onload = () => {
   setDefaultFilters();
   applyFilters(1);
-
-  // Track initial page load
   sendGAEvent('Page View', 'Home Page Load');
 };
