@@ -1,6 +1,27 @@
 let currentPage = 1;
 const DEFAULT_LIMIT = 25;
 
+// Track page load time
+document.addEventListener('DOMContentLoaded', function() {
+  const perfData = window.performance.timing;
+  const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+  gtag('event', 'timing_complete', {
+    'name': 'pageLoad',
+    'value': pageLoadTime,
+    'event_category': 'JS Dependencies'
+  });
+
+  // Track link clicks
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      gtag('event', 'link_click', {
+        'event_category': 'Outbound Link',
+        'event_label': this.href
+      });
+    });
+  });
+});
+
 // Function to send custom events to Google Analytics
 function sendGAEvent(category, action, label = '', value = '') {
   gtag('event', action, {
@@ -31,6 +52,13 @@ async function applyFilters(page = 1) {
   sendGAEvent('Filter Applied', 'Sort', sort);
   sendGAEvent('Filter Applied', 'Date', date);
   sendGAEvent('Filter Applied', 'Limit', limit);
+
+  // Track filter combinations as virtual pageviews
+  const filterState = `type=${type}|sort=${sort}|date=${date}|limit=${limit}`;
+  gtag('event', 'page_view', {
+    'page_title': `Filtered Domains: ${filterState}`,
+    'page_path': `/?${filterState}`
+  });
 
   // Map UI selections to JSON filenames
   const typeMap = {
@@ -92,15 +120,31 @@ async function applyFilters(page = 1) {
     renderPagination(domains.length, limit, page);
 
   } catch (error) {
-    console.error('Error:', error);
-    document.getElementById('domain-table').innerHTML = 
-      `<tr>
-        <td colspan="8" class="p-4 text-red-400 text-center border border-gray-600">
-          Error loading data: ${error.message}
-        </td>
-      </tr>`;
-    sendGAEvent('Error', 'Data Load Error', error.message);
+    handleSEOFriendlyError(error);
   }
+}
+
+function handleSEOFriendlyError(error) {
+  console.error('Error:', error);
+  const errorContainer = document.getElementById('domain-table');
+  errorContainer.innerHTML = `
+    <tr>
+      <td colspan="8" class="p-4 text-center border border-gray-600">
+        <div class="text-red-400 mb-2">Error loading domain data</div>
+        <p class="text-gray-300 text-sm">We're unable to load the domain valuations right now.</p>
+        <p class="text-gray-300 text-sm mt-2">Try refreshing the page or check back later.</p>
+        <button onclick="applyFilters(${currentPage})" 
+                class="mt-3 bg-blue-600 text-white px-3 py-1 rounded text-sm">
+          Retry
+        </button>
+      </td>
+    </tr>`;
+  
+  // Track the error for SEO diagnostics
+  gtag('event', 'exception', {
+    'description': error.message,
+    'fatal': false
+  });
 }
 
 function renderPagination(total, limit, current) {
@@ -178,4 +222,3 @@ window.onload = () => {
   // Track initial page load
   sendGAEvent('Page View', 'Home Page Load');
 };
-
