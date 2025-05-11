@@ -58,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
     consentModal.style.display = 'none';
     consentBanner.style.display = 'none';
   });
+
+  // Initialize the page
+  setDefaultFilters();
+  applyFilters(1);
 });
 
 function sendGAEvent(category, action, label = '', value = '') {
@@ -163,19 +167,42 @@ function renderPagination(total, limit, current) {
     return;
   }
 
-  html += `<button onclick="applyFilters(${current - 1})" class="mx-1 px-3 py-1 bg-gray-700 rounded ${current === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-600'}">&laquo; Prev</button>`;
+  // Previous button
+  const prevDisabled = current === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-600 cursor-pointer';
+  html += `<button id="prev-btn" class="mx-1 px-3 py-1 bg-gray-700 rounded ${prevDisabled}">&laquo; Prev</button>`;
 
+  // Page numbers
   const visiblePages = getVisiblePages(current, pages);
   visiblePages.forEach((page, index) => {
     if (page === '...') {
       html += `<span class="mx-1">...</span>`;
     } else {
-      html += `<button onclick="applyFilters(${page})" class="mx-1 px-3 py-1 ${page === current ? 'bg-blue-600' : 'bg-gray-700 hover:bg-gray-600'} rounded">${page}</button>`;
+      const activeClass = page === current ? 'bg-blue-600' : 'bg-gray-700 hover:bg-gray-600 cursor-pointer';
+      html += `<button class="page-btn mx-1 px-3 py-1 rounded ${activeClass}" data-page="${page}">${page}</button>`;
     }
   });
 
-  html += `<button onclick="applyFilters(${current + 1})" class="mx-1 px-3 py-1 bg-gray-700 rounded ${current === pages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-600'}">Next &raquo;</button>`;
+  // Next button
+  const nextDisabled = current === pages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-600 cursor-pointer';
+  html += `<button id="next-btn" class="mx-1 px-3 py-1 bg-gray-700 rounded ${nextDisabled}">Next &raquo;</button>`;
+
   document.getElementById('pagination').innerHTML = html;
+
+  // Add event listeners
+  document.getElementById('prev-btn')?.addEventListener('click', () => {
+    if (current > 1) applyFilters(current - 1);
+  });
+
+  document.getElementById('next-btn')?.addEventListener('click', () => {
+    if (current < pages) applyFilters(current + 1);
+  });
+
+  document.querySelectorAll('.page-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const page = parseInt(btn.dataset.page);
+      applyFilters(page);
+    });
+  });
 }
 
 function getVisiblePages(current, total) {
@@ -195,9 +222,3 @@ function getVisiblePages(current, total) {
   });
   return simplified;
 }
-
-window.onload = () => {
-  setDefaultFilters();
-  applyFilters(1);
-  sendGAEvent('Page View', 'Home Page Load');
-};
