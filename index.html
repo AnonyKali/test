@@ -165,12 +165,6 @@
 
   <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-4 py-8">
-    <!-- Valuation Tool Description -->
-    <section class="bg-gray-800 p-6 rounded-lg mb-8">
-      <h2 class="text-2xl font-bold mb-4">Expired Domain Finder & Valuation Tool</h2>
-      <p class="mb-4">Talxa helps domain investors quickly find and evaluate recently expired 5-letter (5L) and 6-letter (6L) .com domains. Our tool provides estimated valuations to help you identify potential gems among expired domains.</p>
-    </section>
-
     <!-- How to Use Section -->
     <section class="bg-gray-800 p-6 rounded-lg mb-8">
       <h2 class="text-2xl font-bold mb-4">How to Hunt Expired Domains with Talxa</h2>
@@ -185,7 +179,7 @@
         </div>
         <div class="bg-gray-700 p-4 rounded">
           <h3 class="font-bold text-lg mb-2">3. Sort by Valuation</h3>
-          <p>Organize results by auction estimate, marketplace value, brokerage value, or average appraisal.</p>
+          <p>Sort them from highest to lowest based on (Auction Value, Marketplace, Brokerage, or Average Value).</p>
         </div>
       </div>
     </section>
@@ -194,21 +188,21 @@
     <section class="mt-6 p-4">
       <div class="flex flex-wrap gap-4 justify-center text-black mb-6">
         <select id="type" class="p-2 rounded text-sm md:text-base" aria-label="Domain Type">
-          <option value="5L.coms & 6L.coms">5L & 6L .COM Domains</option>
+          <option value="5L.coms & 6L.coms">5L.coms & 6L.coms Domains</option>
           <option value="5L.coms">5L Domains Only</option>
           <option value="6L.coms">6L Domains Only</option>
         </select>
         <select id="sort" class="p-2 rounded text-sm md:text-base" aria-label="Sort By">
-          <option value="marketplace">Marketplace Value</option>
-          <option value="auction">Auction Estimate</option>
-          <option value="brokerage">Brokerage Value</option>
-          <option value="average">Average Appraisal</option>
+          <option value="marketplace">Marketplace</option>
+          <option value="auction">Auction</option>
+          <option value="brokerage">Brokerage</option>
+          <option value="average">Average</option>
         </select>
         <select id="date" class="p-2 rounded text-sm md:text-base" aria-label="Date Range">
-          <option value="today">Expired Today</option>
-          <option value="yesterday">Expired Yesterday</option>
-          <option value="last7days">Expired Last 7 Days</option>
-          <option value="last30days">Expired Last 30 Days</option>
+          <option value="today">Today</option>
+          <option value="yesterday">Yesterday</option>
+          <option value="last7days">Last 7 Days</option>
+          <option value="last30days">Last 30 Days</option>
         </select>
         <select id="limit" class="p-2 rounded text-sm md:text-base" aria-label="Results Limit">
           <option>25</option>
@@ -241,6 +235,17 @@
 
       <div class="text-center mt-4 overflow-x-auto whitespace-nowrap" id="pagination"></div>
     </section>
+
+    <br>
+    <br>
+
+
+    <!-- Valuation Tool Description -->
+    <section class="bg-gray-800 p-6 rounded-lg mb-8">
+      <h2 class="text-2xl font-bold mb-4">Expired Domain Finder & Valuation Tool</h2>
+      <p class="mb-4">Talxa helps domain investors quickly find and evaluate recently expired 5-letter (5L) and 6-letter (6L) .com domains. Our tool provides estimated valuations to help you identify potential gems among expired domains.</p>
+    </section>
+
 
     <!-- Why Choose Talxa -->
     <section class="bg-gray-800 rounded-lg p-8 mb-8">
