@@ -1,51 +1,15 @@
 let currentPage = 1;
 const DEFAULT_LIMIT = 25;
-let adViews = 0;
-const MAX_FREE_VIEWS = 1;
 
 function detectAdBlock() {
   return new Promise((resolve) => {
-    const ad = document.createElement('div');
-    ad.innerHTML = '&nbsp;';
-    ad.className = 'adsbox';
-    ad.style.position = 'absolute';
-    ad.style.left = '-9999px';
-    ad.style.height = '1px';
-    ad.style.width = '1px';
-    ad.style.overflow = 'hidden';
-    document.body.appendChild(ad);
-    
-    setTimeout(() => {
-      const isBlocked = ad.offsetHeight === 0;
-      document.body.removeChild(ad);
-      resolve(isBlocked);
-    }, 100);
+    resolve(false); // Always return false since we're not checking for ads now
   });
 }
 
 function showAdWall() {
   return new Promise((resolve) => {
-    const adWall = document.getElementById('ad-wall');
-    adWall.style.display = 'flex';
-    
-    const adContainer = document.getElementById('rewarded-ad-container');
-    const adScript = document.createElement('script');
-    adScript.innerHTML = `(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-5000719233865730", enable_page_level_ads: true, overlays: {bottom: true}});`;
-    adContainer.appendChild(adScript);
-    
-    document.getElementById('skip-ad').addEventListener('click', () => {
-      adWall.style.display = 'none';
-      resolve(false);
-    });
-    
-    const observer = new MutationObserver(() => {
-      if (!adContainer.querySelector('iframe')) {
-        adWall.style.display = 'none';
-        resolve(true);
-        observer.disconnect();
-      }
-    });
-    observer.observe(adContainer, {childList: true});
+    resolve(true); // Always resolve as true to bypass ad check
   });
 }
 
@@ -63,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const consentBanner = document.getElementById('consent-banner');
   const consentModal = document.getElementById('consent-modal');
   const consentGiven = localStorage.getItem('consentGiven');
-  
+
   if (!consentGiven) {
     consentBanner.style.display = 'flex';
     gtag('consent', 'default', {
@@ -74,27 +38,27 @@ document.addEventListener('DOMContentLoaded', function() {
       'security_storage': 'granted'
     });
   }
-  
+
   document.getElementById('accept-consent').addEventListener('click', () => {
     localStorage.setItem('consentGiven', 'all');
     gtag('consent', 'update', {'ad_storage': 'granted', 'analytics_storage': 'granted'});
     consentBanner.style.display = 'none';
   });
-  
+
   document.getElementById('reject-consent').addEventListener('click', () => {
     localStorage.setItem('consentGiven', 'none');
     gtag('consent', 'update', {'ad_storage': 'denied', 'analytics_storage': 'denied'});
     consentBanner.style.display = 'none';
   });
-  
+
   document.getElementById('customize-consent').addEventListener('click', () => {
     consentModal.style.display = 'block';
   });
-  
+
   document.getElementById('cancel-consent').addEventListener('click', () => {
     consentModal.style.display = 'none';
   });
-  
+
   document.getElementById('save-consent').addEventListener('click', () => {
     const analytics = document.getElementById('analytics-cookies').checked;
     const advertising = document.getElementById('advertising-cookies').checked;
@@ -106,9 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
     consentModal.style.display = 'none';
     consentBanner.style.display = 'none';
   });
-
-  window.addEventListener('popstate', () => { adViews++; });
-  adViews++;
 });
 
 function sendGAEvent(category, action, label = '', value = '') {
@@ -124,20 +85,6 @@ function setDefaultFilters() {
 }
 
 async function applyFilters(page = 1) {
-  if (page > 1 && adViews >= MAX_FREE_VIEWS) {
-    const adBlockDetected = await detectAdBlock();
-    if (adBlockDetected) {
-      const proceed = confirm("Please disable your ad blocker to continue using Talxa. Our service relies on ad revenue.");
-      if (!proceed) return;
-    }
-    const watchedAd = await showAdWall();
-    if (!watchedAd) {
-      alert("Some features may be limited. Please consider supporting us by watching ads.");
-      return;
-    }
-    adViews = 0;
-  }
-
   currentPage = page;
   const type = document.getElementById('type').value;
   const sort = document.getElementById('sort').value;
