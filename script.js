@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.getElementById('accept-consent')) {
     document.getElementById('accept-consent').addEventListener('click', () => {
       localStorage.setItem('consentGiven', 'all');
-      gtag('consent', 'update', {'ad_storage': 'granted', 'analytics_storage': 'granted'});
+      gtag('consent', 'update', {'analytics_storage': 'granted'});
       if (consentBanner) consentBanner.style.display = 'none';
     });
   }
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.getElementById('reject-consent')) {
     document.getElementById('reject-consent').addEventListener('click', () => {
       localStorage.setItem('consentGiven', 'none');
-      gtag('consent', 'update', {'ad_storage': 'denied', 'analytics_storage': 'denied'});
+      gtag('consent', 'update', {'analytics_storage': 'denied'});
       if (consentBanner) consentBanner.style.display = 'none';
     });
   }
@@ -58,11 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.getElementById('save-consent')) {
     document.getElementById('save-consent').addEventListener('click', () => {
       const analytics = document.getElementById('analytics-cookies')?.checked || false;
-      const advertising = document.getElementById('advertising-cookies')?.checked || false;
       localStorage.setItem('consentGiven', 'custom');
       gtag('consent', 'update', {
-        'analytics_storage': analytics ? 'granted' : 'denied',
-        'ad_storage': advertising ? 'granted' : 'denied'
+        'analytics_storage': analytics ? 'granted' : 'denied'
       });
       if (consentModal) consentModal.style.display = 'none';
       if (consentBanner) consentBanner.style.display = 'none';
@@ -85,7 +83,7 @@ function setDefaultFilters() {
   const sortSelect = document.getElementById('sort');
   const dateSelect = document.getElementById('date');
   const limitSelect = document.getElementById('limit');
-  
+
   if (typeSelect) typeSelect.value = "5L.coms & 6L.coms";
   if (sortSelect) sortSelect.value = "marketplace";
   if (dateSelect) dateSelect.value = "last7days";
@@ -186,7 +184,7 @@ async function applyFilters(page = 1) {
 function renderPagination(total, limit, current) {
   const paginationContainer = document.getElementById('pagination');
   if (!paginationContainer) return;
-  
+
   const pages = Math.ceil(total / limit);
   let html = '';
 
