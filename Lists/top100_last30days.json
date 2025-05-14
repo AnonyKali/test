@@ -3,7 +3,7 @@
     "type": "5L+6L",
     "list_type": "top100",
     "date_range": "last30days",
-    "generated_at": "2025-05-13T22:10:25+02:00"
+    "generated_at": "2025-05-14T21:29:24+02:00"
   },
   "domains": [
     {
@@ -45,16 +45,6 @@
       "brokerage": 61611,
       "average_value": 28871,
       "date": "2025-04-21T22:00:00.000Z"
-    },
-    {
-      "id": 169800,
-      "domain": "xpril.com",
-      "domain_type": "5L",
-      "auction": 1399,
-      "marketplace": 26242,
-      "brokerage": 57728,
-      "average_value": 28456,
-      "date": "2025-04-12T22:00:00.000Z"
     },
     {
       "id": 215159,
@@ -227,6 +217,16 @@
       "date": "2025-04-23T22:00:00.000Z"
     },
     {
+      "id": 228536,
+      "domain": "goggos.com",
+      "domain_type": "6L",
+      "auction": 755,
+      "marketplace": 16510,
+      "brokerage": 36457,
+      "average_value": 17907,
+      "date": "2025-05-13T22:00:00.000Z"
+    },
+    {
       "id": 194761,
       "domain": "sushiy.com",
       "domain_type": "6L",
@@ -245,16 +245,6 @@
       "brokerage": 38455,
       "average_value": 17123,
       "date": "2025-05-05T22:00:00.000Z"
-    },
-    {
-      "id": 169945,
-      "domain": "viaix.com",
-      "domain_type": "5L",
-      "auction": 575,
-      "marketplace": 14969,
-      "brokerage": 35326,
-      "average_value": 16957,
-      "date": "2025-04-12T22:00:00.000Z"
     },
     {
       "id": 163266,
@@ -307,8 +297,8 @@
       "date": "2025-05-05T22:00:00.000Z"
     },
     {
-      "id": 145277,
-      "domain": "yareen.com",
+      "id": 76091,
+      "domain": "DemoOf.com",
       "domain_type": "6L",
       "auction": 81,
       "marketplace": 10936,
@@ -317,8 +307,8 @@
       "date": "2025-05-02T22:00:00.000Z"
     },
     {
-      "id": 76091,
-      "domain": "DemoOf.com",
+      "id": 145277,
+      "domain": "yareen.com",
       "domain_type": "6L",
       "auction": 81,
       "marketplace": 10936,
@@ -527,8 +517,8 @@
       "date": "2025-05-11T22:00:00.000Z"
     },
     {
-      "id": 129786,
-      "domain": "eprusa.com",
+      "id": 38443,
+      "domain": "GoHist.com",
       "domain_type": "6L",
       "auction": 189,
       "marketplace": 10501,
@@ -537,8 +527,8 @@
       "date": "2025-05-05T22:00:00.000Z"
     },
     {
-      "id": 38443,
-      "domain": "GoHist.com",
+      "id": 129786,
+      "domain": "eprusa.com",
       "domain_type": "6L",
       "auction": 189,
       "marketplace": 10501,
@@ -557,16 +547,6 @@
       "date": "2025-05-06T22:00:00.000Z"
     },
     {
-      "id": 180372,
-      "domain": "oxotek.com",
-      "domain_type": "6L",
-      "auction": 208,
-      "marketplace": 10533,
-      "brokerage": 28369,
-      "average_value": 13037,
-      "date": "2025-04-27T22:00:00.000Z"
-    },
-    {
       "id": 161414,
       "domain": "stente.com",
       "domain_type": "6L",
@@ -575,6 +555,16 @@
       "brokerage": 27364,
       "average_value": 13037,
       "date": "2025-04-28T22:00:00.000Z"
+    },
+    {
+      "id": 180372,
+      "domain": "oxotek.com",
+      "domain_type": "6L",
+      "auction": 208,
+      "marketplace": 10533,
+      "brokerage": 28369,
+      "average_value": 13037,
+      "date": "2025-04-27T22:00:00.000Z"
     },
     {
       "id": 217933,
@@ -627,8 +617,8 @@
       "date": "2025-04-30T22:00:00.000Z"
     },
     {
-      "id": 202887,
-      "domain": "strurl.com",
+      "id": 112057,
+      "domain": "AyeShy.com",
       "domain_type": "6L",
       "auction": 270,
       "marketplace": 10076,
@@ -637,8 +627,8 @@
       "date": "2025-04-17T22:00:00.000Z"
     },
     {
-      "id": 112057,
-      "domain": "AyeShy.com",
+      "id": 202887,
+      "domain": "strurl.com",
       "domain_type": "6L",
       "auction": 270,
       "marketplace": 10076,
@@ -675,6 +665,16 @@
       "brokerage": 26186,
       "average_value": 12222,
       "date": "2025-04-16T22:00:00.000Z"
+    },
+    {
+      "id": 225884,
+      "domain": "yuqio.com",
+      "domain_type": "5L",
+      "auction": 31,
+      "marketplace": 8210,
+      "brokerage": 28247,
+      "average_value": 12163,
+      "date": "2025-05-13T22:00:00.000Z"
     },
     {
       "id": 213020,
